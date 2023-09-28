@@ -127,7 +127,7 @@ export default async ({ req, res }) => {
     client
     .setEndpoint("https://cloud.appwrite.io/v1")
     .setProject("functions-test")
-    .setKey(process.env.APPWRITE_API_KEY);
+    .setKey("cd2d75a9b5a0b7b8cefe55eaeaea0486f5403cef5c25858ad64b26935201889de17b513bd717947816a40a38b20fcf3a228c11a4a1bcbfd3657b274b553023251a86c60d481c029765d06b020029677976205a5b9179ec7239323f80268eed083755be5e6267487d8670d2524974e4375c3c5e724add66f9f7846fb84759ec41");
 
     const databases = new Databases(client);
     const document = await databases.createDocument('message-id', 'message-collection-id', ID.unique(), message);
