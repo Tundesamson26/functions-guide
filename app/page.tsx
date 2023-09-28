@@ -1,95 +1,104 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+"use client";
+import "@appwrite.io/pink"; // optionally, add icons
+import "@appwrite.io/pink-icons";
+import React from "react";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <section>
+      <div
+        className="u-flex u-main-space-between u-cross-center"
+        style={{
+          padding: "20px",
+          backgroundColor: "rgb(219, 26, 90)",
+          color: "white",
+          marginBottom: "20px",
+        }}
+      >
+        <h1 className="u-text-center u-font-size-32">Book Me</h1>
+      </div>
+      <div
+        className="card u-cross-center u-width-full-line u-max-width-500"
+        style={{ margin: "auto" }}
+      >
+        <div className="u-flex u-main-space-between u-cross-center">
+          <h6 className="heading-level-6 u-text-center">New Guest</h6>
         </div>
+
+        <form
+          method="POST"
+          action="https://651562eb651337681bd5.appwrite.global/"
+          className="form u-margin-block-start-24"
+        >
+          <ul className="form-list">
+            <li className="form-item">
+              <label className="label">Full Name</label>
+              <div className="input-text-wrapper">
+                <input
+                  type="text"
+                  className="input-text u-padding-inline-end-56"
+                  placeholder="Full name"
+                  name="name"
+                />
+              </div>
+            </li>
+            <li className="form-item">
+              <label className="label">Email</label>
+              <div className="input-text-wrapper">
+                <input
+                  type="email"
+                  className="input-text u-padding-inline-end-56"
+                  placeholder="abc@example.com"
+                  name="email"
+                />
+              </div>
+            </li>
+            <div className="u-flex u-main-space-between u-cross-center">
+              <li className="form-item">
+                <label className="label">Check-In</label>
+                <div className="input-text-wrapper">
+                  <input
+                    type="date"
+                    name="date"
+                  />
+                </div>
+              </li>
+              <li className="form-item">
+                <label className="label">Time</label>
+                <div className="input-text-wrapper">
+                  <select
+                    name="time"
+                  >
+                    <option>2pm - 3pm</option>
+                    <option>4pm - 5pm</option>
+                    <option>6pm - 7pm</option>
+                    <option>8pm - 9pm</option>
+                  </select>
+                </div>
+              </li>
+            </div>
+            <li className="form-item">
+              <label className="label">Message</label>
+              <div className="input-text-wrapper">
+                <textarea
+                  className="input-text"
+                  placeholder="Type here..."
+                  name="message"
+                  style={{ height: "80px" }}
+                ></textarea>
+              </div>
+            </li>
+          </ul>
+
+          <div className="form-footer">
+            <div className="u-flex u-main-end u-gap-12">
+              <button className="button" type="submit">
+                Submit
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    </section>
+  );
 }

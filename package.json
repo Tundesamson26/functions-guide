@@ -9,16 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@appwrite.io/pink": "^0.0.6-rc.15",
+    "appwrite": "^13.0.0",
+    "next": "latest",
+    "node-appwrite": "^11.0.0",
     "react": "latest",
-    "react-dom": "latest",
-    "next": "latest"
+    "react-dom": "latest"
   },
   "devDependencies": {
-    "typescript": "latest",
-    "@types/react": "latest",
     "@types/node": "latest",
+    "@types/react": "latest",
     "@types/react-dom": "latest",
     "eslint": "latest",
-    "eslint-config-next": "latest"
+    "eslint-config-next": "latest",
+    "typescript": "latest"
   }
 }
